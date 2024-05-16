@@ -1,0 +1,57 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "Top_BMC_UART_Response_Ge_0_0",
+    "cell_name": "RESPUESTA_SERIAL",
+    "component_reference": "xilinx.com:module_ref:BMC_UART_Response_Generator:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_UART_Response_Ge_0_0",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "Top_BMC_UART_Response_Ge_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "digilentinc.com:eclypse-z7:part0:1.1" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z020" } ],
+        "PACKAGE": [ { "value": "clg484" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_UART_Response_Ge_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.2" } ],
+        "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "i_CMD": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_MCN": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_TN": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_Data": [ { "direction": "in", "size_left": "2047", "size_right": "0" } ],
+        "i_Data_Num_Bytes": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_Data_Type": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_Data_MCN": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_Data_SRC": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_Data_DST": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "o_Response_Byte_0": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "o_Response_Byte_1": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "o_Response_Byte_2": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "o_Response_Byte_3": [ { "direction": "out", "size_left": "7", "size_right": "0" } ],
+        "o_Response": [ { "direction": "out", "size_left": "2047", "size_right": "0" } ],
+        "o_Response_Num_Bytes": [ { "direction": "out", "size_left": "7", "size_right": "0" } ]
+      }
+    }
+  }
+}

@@ -1,0 +1,355 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Wed May 15 15:20:41 2024
+| Host         : mgmt running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : report_control_sets -verbose -file Top_wrapper_control_sets_placed.rpt
+| Design       : Top_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   277 |
+|    Minimum number of control sets                        |   277 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    77 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   277 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |   256 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    12 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              47 |           28 |
+| No           | No                    | Yes                    |               2 |            1 |
+| No           | Yes                   | No                     |              52 |           21 |
+| Yes          | No                    | No                     |              33 |           14 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            4445 |         1129 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+|                       Clock Signal                      |                   Enable Signal                  |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG                                          | Top_i/EOMDetector_0/inst/r_Counter               |                                                  |                1 |              1 |         1.00 |
+|  Top_i/RESPUESTA_SERIAL/inst/o_Response_reg[31]_i_2_n_0 |                                                  |                                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                          |                                                  | Top_i/PulseGenerator_0/inst/o_Pulse              |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_COMANDO/inst/r_CMD                    |                                                  |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_COMANDO/inst/r_TN                     | Top_i/UART_COMANDO/inst/r_TN[5]_i_1_n_0          |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[927]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1983]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1975]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1847]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[183]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1615]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1839]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[959]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[935]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[2007]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[887]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[87]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[863]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[855]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[799]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[791]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1991]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1999]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[199]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[703]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[255]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[263]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[271]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[279]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[287]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[495]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[503]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[511]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[519]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[527]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[559]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[591]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[951]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[447]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[55]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[567]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[631]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[647]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[655]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[711]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[719]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[79]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[7]_i_1_n_0        | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[823]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[831]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[895]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[903]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[943]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[727]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[95]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[967]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[407]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[415]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[455]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[463]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[471]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[479]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[607]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[615]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[679]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[687]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[695]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[663]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[71]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[879]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[767]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[759]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[751]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[743]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[735]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[2031]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[2023]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[2015]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[975]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[871]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[815]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[807]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[63]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[639]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[583]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[575]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[391]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[983]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[991]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[999]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_Sender_0/inst/r_TX_Data[7]_i_1_n_0    |                                                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1959]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1967]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1943]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1951]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1935]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1911]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[191]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1919]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1927]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[247]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[23]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1095]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[623]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[671]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[775]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[783]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[839]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[847]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[911]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[919]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[295]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[303]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[47]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[487]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[535]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[543]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1031]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[599]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1159]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1223]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1287]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1359]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1423]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1487]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1551]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1607]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[167]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1751]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1799]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[2039]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[335]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[343]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[383]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[551]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1079]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1071]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1055]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1047]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1039]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1023]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1015]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1007]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1087]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[39]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[399]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[359]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[351]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[319]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[311]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[207]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1807]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1103]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1119]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[111]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1135]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1143]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1151]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1167]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1183]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1191]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[119]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1207]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1215]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1231]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1247]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1255]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1303]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1855]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1863]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1871]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1879]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1887]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1895]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1903]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[103]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1063]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1111]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1127]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1175]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1199]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1239]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1263]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[431]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1327]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1367]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1391]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1439]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1455]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1503]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[151]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1567]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1591]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1631]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1655]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1695]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1719]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[175]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1783]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1663]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1743]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1735]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1727]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1711]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1703]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1687]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1679]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1671]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1759]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1647]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1639]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1623]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[15]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1599]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1583]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1575]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[223]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[439]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[423]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[375]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[367]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[327]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[31]_i_1_n_0       | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[239]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[231]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[159]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[215]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1831]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1823]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1815]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1791]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1775]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1767]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1543]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1271]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1279]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[127]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1295]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1311]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1319]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1335]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1343]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1351]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[135]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1375]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1383]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1399]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1407]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1431]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[143]_i_1_n_0      | Top_i/BMCDecoder_0/inst/clear                    |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1447]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1463]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1471]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1479]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1495]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1415]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1511]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1519]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1527]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1559]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Data[1535]_i_1_n_0     | Top_i/BMCDecoder_0/inst/clear                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/EOMDetector_0/inst/r_SM_Main               |                                                  |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_Sender_0/inst/p_0_in                  |                                                  |                6 |             10 |         1.67 |
+|  clk_IBUF_BUFG                                          |                                                  | Top_i/BMCDecoder_0/inst/clear                    |                5 |             12 |         2.40 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_RX_RnM/inst/r_Clock_Count[13]_i_2_n_0 | Top_i/UART_RX_RnM/inst/r_Clock_Count[13]_i_1_n_0 |                4 |             14 |         3.50 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_Loader_0/inst/r_Counter[15]_i_1_n_0   | Top_i/UART_Loader_0/inst/r_Byte0                 |                3 |             16 |         5.33 |
+|  clk_IBUF_BUFG                                          |                                                  | Top_i/Debouncer_0/inst/p_0_in                    |                8 |             20 |         2.50 |
+|  clk_IBUF_BUFG                                          |                                                  | Top_i/Debouncer_1/inst/p_0_in                    |                8 |             20 |         2.50 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_Loader_0/inst/r_Byte[7]_i_2_n_0       | Top_i/UART_Loader_0/inst/r_Byte0                 |                8 |             24 |         3.00 |
+|  clk_IBUF_BUFG                                          | Top_i/UART_Loader_0/inst/r_Byte0                 | Top_i/UART_Loader_0/inst/r_Data[31]_i_1_n_0      |                7 |             25 |         3.57 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCEncoder_0/inst/r_Count[30]_i_2_n_0      | Top_i/BMCEncoder_0/inst/r_Count[30]_i_1_n_0      |                8 |             30 |         3.75 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/sel                      | Top_i/BMCDecoder_0/inst/clear                    |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/EOMDetector_0/inst/r_Counter               | Top_i/EOMDetector_0/inst/r_Counter[40]_i_1_n_0   |               10 |             40 |         4.00 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCDecoder_0/inst/r_Count[40]_i_2_n_0      | Top_i/BMCDecoder_0/inst/r_Count[40]_i_1_n_0      |               11 |             41 |         3.73 |
+|  clk_IBUF_BUFG                                          |                                                  |                                                  |               27 |             46 |         1.70 |
+|  clk_IBUF_BUFG                                          | Top_i/BMCEncoder_0/inst/r_Bit_Index              | Top_i/BMCEncoder_0/inst/r_Data                   |               30 |            129 |         4.30 |
+|  clk_IBUF_BUFG                                          | Top_i/Memory_0/inst/o_Data[2039]_i_2_n_0         | Top_i/Memory_0/inst/o_Data[2039]_i_1_n_0         |              447 |           2048 |         4.58 |
++---------------------------------------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+
+

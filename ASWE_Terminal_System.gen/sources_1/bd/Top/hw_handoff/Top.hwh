@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 15 15:19:13 2024" VIVADOVERSION="2023.2">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:eclypse-z7:part0:1.1" DEVICE="7z020" NAME="Top" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="BMC_In" SIGIS="undef" SIGNAME="External_Ports_BMC_In">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="EOMDetector_0" PORT="i_RX_BMC"/>
+        <CONNECTION INSTANCE="BMCDecoder_0" PORT="i_In_BMC"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="BMC_Out" SIGIS="undef" SIGNAME="BMCEncoder_0_o_BMC">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="BMCEncoder_0" PORT="o_BMC"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="UART_RX" SIGIS="undef" SIGNAME="External_Ports_UART_RX">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UART_RX" PORT="i_RX_Serial"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="UART_TX" SIGIS="undef" SIGNAME="UART_Sender_0_o_TX_Serial">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UART_Sender_0" PORT="o_TX_Serial"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="UART_RX" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="UART_COMANDO" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="PulseGenerator_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="Debouncer_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="Debouncer_1" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="PulseGenerator_1" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="UART_Sender_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="EOMDetector_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="BMCEncoder_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="Memory_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="UART_Loader_0" PORT="i_Clock"/>
+        <CONNECTION INSTANCE="BMCDecoder_0" PORT="i_Clock"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i_Button" SIGIS="undef" SIGNAME="External_Ports_i_Button">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Debouncer_1" PORT="i_Button"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="i_Reset" SIGIS="undef" SIGNAME="External_Ports_i_Reset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Debouncer_0" PORT="i_Button"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="ja" RIGHT="0" SIGIS="undef" SIGNAME="BMC_DST_Indicator_1_o_DST">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="BMC_DST_Indicator_1" PORT="o_DST"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="led0_b" SIGIS="undef" SIGNAME="BMC_Checksum_Validat_0_o_Checksum_Valid">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="BMC_Checksum_Validat_0" PORT="o_Checksum_Valid"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="led1_r" SIGIS="undef" SIGNAME="BMCEncoder_0_o_BMC">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="BMCEncoder_0" PORT="o_BMC"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/BMCDecoder_0" HWVERSION="1.0" INSTANCE="BMCDecoder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMCDecoder" VLNV="xilinx.com:module_ref:BMCDecoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLKS_PER_BIT" VALUE="42"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMCDecoder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_EOM" SIGIS="undef" SIGNAME="EOMDetector_0_o_EOM">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="EOMDetector_0" PORT="o_EOM"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_In_BMC" SIGIS="undef" SIGNAME="External_Ports_BMC_In">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="BMC_In"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_BMC_Ready" SIGIS="undef" SIGNAME="BMCDecoder_0_o_BMC_Ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="i_Load"/>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="i_Load"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2047" NAME="o_Data" RIGHT="0" SIGIS="undef" SIGNAME="BMCDecoder_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="i_Data"/>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="BMCDecoder_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="i_Num_Bytes"/>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_Data_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/BMCEncoder_0" HWVERSION="1.0" INSTANCE="BMCEncoder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMCEncoder" VLNV="xilinx.com:module_ref:BMCEncoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLKS_PER_BIT" VALUE="42"/>
+        <PARAMETER NAME="DATA_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMCEncoder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1023" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="16" NAME="i_Data_Size" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_2" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Enable" SIGIS="undef" SIGNAME="PulseGenerator_1_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_1" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_BMC" SIGIS="undef" SIGNAME="BMCEncoder_0_o_BMC">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="BMC_Out"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led1_r"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="128" NAME="o_Bit_index" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_Data" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_Ready" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_SM_Main" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/BMC_Checksum_Validat_0" HWVERSION="1.0" INSTANCE="BMC_Checksum_Validat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMC_Checksum_Validator" VLNV="xilinx.com:module_ref:BMC_Checksum_Validator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMC_Checksum_Validat_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_Checksum" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_Checksum_Valid" SIGIS="undef" SIGNAME="BMC_Checksum_Validat_0_o_Checksum_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="led0_b"/>
+            <CONNECTION INSTANCE="BMC_Type_Indicator_1" PORT="i_Checksum_Valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_ECF" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/BMC_DST_Indicator_1" HWVERSION="1.0" INSTANCE="BMC_DST_Indicator_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMC_DST_Indicator" VLNV="xilinx.com:module_ref:BMC_DST_Indicator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="BR" VALUE="&quot;00000101&quot;"/>
+        <PARAMETER NAME="INVALID" VALUE="&quot;00000000&quot;"/>
+        <PARAMETER NAME="NR" VALUE="&quot;00000011&quot;"/>
+        <PARAMETER NAME="NTT" VALUE="&quot;00000010&quot;"/>
+        <PARAMETER NAME="PTP" VALUE="&quot;00000100&quot;"/>
+        <PARAMETER NAME="PTT" VALUE="&quot;00000001&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMC_DST_Indicator_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Type" RIGHT="0" SIGIS="undef" SIGNAME="BMC_Type_Indicator_1_o_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_Type_Indicator_1" PORT="o_Type"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_DST" RIGHT="0" SIGIS="undef" SIGNAME="BMC_DST_Indicator_1_o_DST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_Data_DST"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="ja"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/BMC_SRC_Indicator_1" HWVERSION="1.0" INSTANCE="BMC_SRC_Indicator_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMC_SRC_Indicator" VLNV="xilinx.com:module_ref:BMC_SRC_Indicator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="BR" VALUE="&quot;00000101&quot;"/>
+        <PARAMETER NAME="INVALID" VALUE="&quot;00000000&quot;"/>
+        <PARAMETER NAME="NR" VALUE="&quot;00000011&quot;"/>
+        <PARAMETER NAME="NTT" VALUE="&quot;00000010&quot;"/>
+        <PARAMETER NAME="PTP" VALUE="&quot;00000100&quot;"/>
+        <PARAMETER NAME="PTT" VALUE="&quot;00000001&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMC_SRC_Indicator_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Type" RIGHT="0" SIGIS="undef" SIGNAME="BMC_Type_Indicator_1_o_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_Type_Indicator_1" PORT="o_Type"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_SRC" RIGHT="0" SIGIS="undef" SIGNAME="BMC_SRC_Indicator_1_o_SRC">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_Data_SRC"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/BMC_Type_Indicator_1" HWVERSION="1.0" INSTANCE="BMC_Type_Indicator_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMC_Type_Indicator" VLNV="xilinx.com:module_ref:BMC_Type_Indicator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="BR" VALUE="&quot;00000101&quot;"/>
+        <PARAMETER NAME="INVALID" VALUE="&quot;00000000&quot;"/>
+        <PARAMETER NAME="NR" VALUE="&quot;00000011&quot;"/>
+        <PARAMETER NAME="NTT" VALUE="&quot;00000010&quot;"/>
+        <PARAMETER NAME="PTP" VALUE="&quot;00000100&quot;"/>
+        <PARAMETER NAME="PTT" VALUE="&quot;00000001&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMC_Type_Indicator_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i_Checksum_Valid" SIGIS="undef" SIGNAME="BMC_Checksum_Validat_0_o_Checksum_Valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_Checksum_Validat_0" PORT="o_Checksum_Valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Memory_0" PORT="o_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_Type" RIGHT="0" SIGIS="undef" SIGNAME="BMC_Type_Indicator_1_o_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_SRC_Indicator_1" PORT="i_Type"/>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_Data_Type"/>
+            <CONNECTION INSTANCE="BMC_DST_Indicator_1" PORT="i_Type"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Debouncer_0" HWVERSION="1.0" INSTANCE="Debouncer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Debouncer" VLNV="xilinx.com:module_ref:Debouncer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_Debouncer_0_2"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i_Button" SIGIS="undef" SIGNAME="External_Ports_i_Reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i_Reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_Out" SIGIS="undef" SIGNAME="Debouncer_0_o_Out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="i_Button"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Debouncer_1" HWVERSION="1.0" INSTANCE="Debouncer_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Debouncer" VLNV="xilinx.com:module_ref:Debouncer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_Debouncer_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i_Button" SIGIS="undef" SIGNAME="External_Ports_i_Button">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="i_Button"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_Out" SIGIS="undef" SIGNAME="Debouncer_1_o_Out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_1" PORT="i_Button"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/EOMDetector_0" HWVERSION="1.0" INSTANCE="EOMDetector_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="EOMDetector" VLNV="xilinx.com:module_ref:EOMDetector:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLKS_PER_BIT" VALUE="42"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_EOMDetector_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_RX_BMC" SIGIS="undef" SIGNAME="External_Ports_BMC_In">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="BMC_In"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_EOM" SIGIS="undef" SIGNAME="EOMDetector_0_o_EOM">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="i_EOM"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_SM_Main" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_Valid_Msg" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Memory_0" HWVERSION="1.0" INSTANCE="Memory_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Memory" VLNV="xilinx.com:module_ref:Memory:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_Memory_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="BMCDecoder_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="o_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Load" SIGIS="undef" SIGNAME="BMCDecoder_0_o_BMC_Ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="o_BMC_Ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="BMCDecoder_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="o_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2047" NAME="o_Data" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_SRC_Indicator_1" PORT="i_Data"/>
+            <CONNECTION INSTANCE="BMC_DST_Indicator_1" PORT="i_Data"/>
+            <CONNECTION INSTANCE="BMC_Type_Indicator_1" PORT="i_Data"/>
+            <CONNECTION INSTANCE="BMC_Checksum_Validat_0" PORT="i_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="Memory_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_SRC_Indicator_1" PORT="i_Num_Bytes"/>
+            <CONNECTION INSTANCE="BMC_DST_Indicator_1" PORT="i_Num_Bytes"/>
+            <CONNECTION INSTANCE="BMC_Type_Indicator_1" PORT="i_Num_Bytes"/>
+            <CONNECTION INSTANCE="BMC_Checksum_Validat_0" PORT="i_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/PulseGenerator_0" HWVERSION="1.0" INSTANCE="PulseGenerator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PulseGenerator" VLNV="xilinx.com:module_ref:PulseGenerator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_PulseGenerator_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i_Button" SIGIS="undef" SIGNAME="Debouncer_0_o_Out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_0" PORT="o_Out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_NChanges" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_Pulse" SIGIS="undef" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_COMANDO" PORT="i_Reset"/>
+            <CONNECTION INSTANCE="UART_Sender_0" PORT="i_Rst_L"/>
+            <CONNECTION INSTANCE="EOMDetector_0" PORT="i_Reset"/>
+            <CONNECTION INSTANCE="BMCEncoder_0" PORT="i_Reset"/>
+            <CONNECTION INSTANCE="Memory_0" PORT="i_Reset"/>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="i_Reset"/>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="i_Reset"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/PulseGenerator_1" HWVERSION="1.0" INSTANCE="PulseGenerator_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PulseGenerator" VLNV="xilinx.com:module_ref:PulseGenerator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_PulseGenerator_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="i_Button" SIGIS="undef" SIGNAME="Debouncer_1_o_Out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Debouncer_1" PORT="o_Out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_NChanges" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_Pulse" SIGIS="undef" SIGNAME="PulseGenerator_1_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCEncoder_0" PORT="i_Enable"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/RESPUESTA_SERIAL" HWVERSION="1.0" INSTANCE="RESPUESTA_SERIAL" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BMC_UART_Response_Generator" VLNV="xilinx.com:module_ref:BMC_UART_Response_Generator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Top_BMC_UART_Response_Ge_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="i_CMD" RIGHT="0" SIGIS="undef" SIGNAME="UART_COMANDO_o_CMD">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_COMANDO" PORT="o_CMD"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="BMCDecoder_0_o_Data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="o_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Data_DST" RIGHT="0" SIGIS="undef" SIGNAME="BMC_DST_Indicator_1_o_DST">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_DST_Indicator_1" PORT="o_DST"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Data_MCN" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Data_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="BMCDecoder_0_o_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="o_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Data_SRC" RIGHT="0" SIGIS="undef" SIGNAME="BMC_SRC_Indicator_1_o_SRC">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_SRC_Indicator_1" PORT="o_SRC"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Data_Type" RIGHT="0" SIGIS="undef" SIGNAME="BMC_Type_Indicator_1_o_Type">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMC_Type_Indicator_1" PORT="o_Type"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_MCN" RIGHT="0" SIGIS="undef" SIGNAME="UART_COMANDO_o_MCN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_COMANDO" PORT="o_MCN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_TN" RIGHT="0" SIGIS="undef" SIGNAME="UART_COMANDO_o_TN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_COMANDO" PORT="o_TN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2047" NAME="o_Response" RIGHT="0" SIGIS="undef" SIGNAME="RESPUESTA_SERIAL_o_Response">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="i_Data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_Response_Byte_0" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_Response_Byte_1" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_Response_Byte_2" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_Response_Byte_3" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_Response_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="RESPUESTA_SERIAL_o_Response_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="i_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_COMANDO" HWVERSION="1.0" INSTANCE="UART_COMANDO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="UART_Command_Interpreter" VLNV="xilinx.com:module_ref:UART_Command_Interpreter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CMD" VALUE="&quot;011&quot;"/>
+        <PARAMETER NAME="EE" VALUE="&quot;010&quot;"/>
+        <PARAMETER NAME="FF" VALUE="&quot;001&quot;"/>
+        <PARAMETER NAME="IDLE" VALUE="&quot;000&quot;"/>
+        <PARAMETER NAME="TN" VALUE="&quot;100&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_UART_Command_Interpr_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="i_Byte" RIGHT="0" SIGIS="undef" SIGNAME="UART_RX_o_RX_Byte">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_RX" PORT="o_RX_Byte"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_TX_DV" SIGIS="undef" SIGNAME="UART_RX_o_RX_DV">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_RX" PORT="o_RX_DV"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_CMD" RIGHT="0" SIGIS="undef" SIGNAME="UART_COMANDO_o_CMD">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_CMD"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_MCN" RIGHT="0" SIGIS="undef" SIGNAME="UART_COMANDO_o_MCN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_MCN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="o_SM_Main" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="o_TN" RIGHT="0" SIGIS="undef" SIGNAME="UART_COMANDO_o_TN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_TN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_Loader_0" HWVERSION="1.0" INSTANCE="UART_Loader_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="UART_Loader" VLNV="xilinx.com:module_ref:UART_Loader:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLEANUP" VALUE="&quot;10&quot;"/>
+        <PARAMETER NAME="CLEANUP_TIME" VALUE="&quot;000101110111000&quot;"/>
+        <PARAMETER NAME="IDLE" VALUE="&quot;00&quot;"/>
+        <PARAMETER NAME="QUEUE" VALUE="&quot;01&quot;"/>
+        <PARAMETER NAME="SENDING" VALUE="&quot;11&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_UART_Loader_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2047" NAME="i_Data" RIGHT="0" SIGIS="undef" SIGNAME="RESPUESTA_SERIAL_o_Response">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="o_Response"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Load" SIGIS="undef" SIGNAME="BMCDecoder_0_o_BMC_Ready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCDecoder_0" PORT="o_BMC_Ready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_Num_Bytes" RIGHT="0" SIGIS="undef" SIGNAME="RESPUESTA_SERIAL_o_Response_Num_Bytes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="o_Response_Num_Bytes"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_TX_Active" SIGIS="undef" SIGNAME="UART_Sender_0_o_TX_Active">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Sender_0" PORT="o_TX_Active"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_TX_Done" SIGIS="undef" SIGNAME="UART_Sender_0_o_TX_Done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Sender_0" PORT="o_TX_Done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_Byte" RIGHT="0" SIGIS="undef" SIGNAME="UART_Loader_0_o_Byte">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Sender_0" PORT="i_TX_Byte"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_SM_Main" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_TX_DV" SIGIS="undef" SIGNAME="UART_Loader_0_o_TX_DV">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Sender_0" PORT="i_TX_DV"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_RX" HWVERSION="1.0" INSTANCE="UART_RX" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="UART_Receiver" VLNV="xilinx.com:module_ref:UART_Receiver:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLKS_PER_BIT" VALUE="272"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_UART_Receiver_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_RX_Serial" SIGIS="undef" SIGNAME="External_Ports_UART_RX">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="UART_RX"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="o_RX_Byte" RIGHT="0" SIGIS="undef" SIGNAME="UART_RX_o_RX_Byte">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_COMANDO" PORT="i_Byte"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_RX_DV" SIGIS="undef" SIGNAME="UART_RX_o_RX_DV">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_COMANDO" PORT="i_TX_DV"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/UART_Sender_0" HWVERSION="1.0" INSTANCE="UART_Sender_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="UART_Sender" VLNV="xilinx.com:module_ref:UART_Sender:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLKS_PER_BIT" VALUE="272"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_UART_Sender_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="i_Clock" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_Rst_L" SIGIS="undef" SIGNAME="PulseGenerator_0_o_Pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PulseGenerator_0" PORT="o_Pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="i_TX_Byte" RIGHT="0" SIGIS="undef" SIGNAME="UART_Loader_0_o_Byte">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="o_Byte"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="i_TX_DV" SIGIS="undef" SIGNAME="UART_Loader_0_o_TX_DV">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="o_TX_DV"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="o_State" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="o_TX_Active" SIGIS="undef" SIGNAME="UART_Sender_0_o_TX_Active">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="i_TX_Active"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_TX_Done" SIGIS="undef" SIGNAME="UART_Sender_0_o_TX_Done">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="UART_Loader_0" PORT="i_TX_Done"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="o_TX_Serial" SIGIS="undef" SIGNAME="UART_Sender_0_o_TX_Serial">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="UART_TX"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="8" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x00"/>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_xlconstant_0_5"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RESPUESTA_SERIAL" PORT="i_Data_MCN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="8" FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000C269D53FFF"/>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1024"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_xlconstant_0_8"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="1023" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCEncoder_0" PORT="i_Data"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="8" FULLNAME="/xlconstant_2" HWVERSION="1.1" INSTANCE="xlconstant_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x00028"/>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="17"/>
+        <PARAMETER NAME="Component_Name" VALUE="Top_xlconstant_0_9"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="16" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_2_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BMCEncoder_0" PORT="i_Data_Size"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

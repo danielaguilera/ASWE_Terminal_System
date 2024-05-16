@@ -1,0 +1,1164 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x5D1613BD9432A825",
+      "device": "xc7z020clg484-1",
+      "gen_directory": "../../../../ASWE_Terminal_System.gen/sources_1/bd/Top",
+      "name": "Top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2023.2"
+    },
+    "design_tree": {
+      "UART_RECEPTOR": "",
+      "UART_COMANDO_CONFIGURACION": "",
+      "BMC_VALIDADOR_CHECKSUM": "",
+      "BMC_DST": "",
+      "BMC_SRC": "",
+      "BMC_CLASIFICADOR": "",
+      "RESPUESTA_SERIAL": "",
+      "DEBOUNCER_RESET": "",
+      "GENERADOR_DE_PULSO_RESET": "",
+      "xlconstant_0": "",
+      "UART_CARGADOR": "",
+      "GENERADOR_DE_PULSO_BOTON": "",
+      "DEBOUNCER_BOTON": "",
+      "UART_EMISOR_BYTE": "",
+      "BMC_CODIFICADOR": "",
+      "xlconstant_1": "",
+      "xlconstant_2": "",
+      "BMC_DETECTOR_END_OF_MESSAGE": "",
+      "BMC_DECODIFICADOR": "",
+      "MEMORIA": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "UART_RX": {
+        "direction": "I"
+      },
+      "i_Reset": {
+        "direction": "I"
+      },
+      "i_Button": {
+        "direction": "I"
+      },
+      "UART_TX": {
+        "direction": "O"
+      },
+      "BMC_Out": {
+        "direction": "O"
+      },
+      "BMC_In": {
+        "direction": "I"
+      },
+      "led1_r": {
+        "direction": "O"
+      },
+      "ja": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "led0_b": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "UART_RECEPTOR": {
+        "vlnv": "xilinx.com:module_ref:UART_Receiver:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_UART_Receiver_0_0",
+        "xci_path": "ip/Top_UART_Receiver_0_0/Top_UART_Receiver_0_0.xci",
+        "inst_hier_path": "UART_RECEPTOR",
+        "parameters": {
+          "CLKS_PER_BIT": {
+            "value": "272"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UART_Receiver",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_RX_Serial": {
+            "direction": "I"
+          },
+          "o_RX_DV": {
+            "direction": "O"
+          },
+          "o_RX_Byte": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "UART_COMANDO_CONFIGURACION": {
+        "vlnv": "xilinx.com:module_ref:UART_Command_Interpreter:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_UART_Command_Interpr_0_0",
+        "xci_path": "ip/Top_UART_Command_Interpr_0_0/Top_UART_Command_Interpr_0_0.xci",
+        "inst_hier_path": "UART_COMANDO_CONFIGURACION",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UART_Command_Interpreter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_Byte": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_TX_DV": {
+            "direction": "I"
+          },
+          "o_SM_Main": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "o_CMD": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_TN": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_MCN": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "BMC_VALIDADOR_CHECKSUM": {
+        "vlnv": "xilinx.com:module_ref:BMC_Checksum_Validator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMC_Checksum_Validat_0_0",
+        "xci_path": "ip/Top_BMC_Checksum_Validat_0_0/Top_BMC_Checksum_Validat_0_0.xci",
+        "inst_hier_path": "BMC_VALIDADOR_CHECKSUM",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMC_Checksum_Validator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Checksum": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_ECF": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Checksum_Valid": {
+            "direction": "O"
+          }
+        }
+      },
+      "BMC_DST": {
+        "vlnv": "xilinx.com:module_ref:BMC_DST_Indicator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMC_DST_Indicator_0_1",
+        "xci_path": "ip/Top_BMC_DST_Indicator_0_1/Top_BMC_DST_Indicator_0_1.xci",
+        "inst_hier_path": "BMC_DST",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMC_DST_Indicator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Type": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "o_DST": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "BMC_SRC": {
+        "vlnv": "xilinx.com:module_ref:BMC_SRC_Indicator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMC_SRC_Indicator_0_1",
+        "xci_path": "ip/Top_BMC_SRC_Indicator_0_1/Top_BMC_SRC_Indicator_0_1.xci",
+        "inst_hier_path": "BMC_SRC",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMC_SRC_Indicator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Type": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "o_SRC": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "BMC_CLASIFICADOR": {
+        "vlnv": "xilinx.com:module_ref:BMC_Type_Indicator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMC_Type_Indicator_0_1",
+        "xci_path": "ip/Top_BMC_Type_Indicator_0_1/Top_BMC_Type_Indicator_0_1.xci",
+        "inst_hier_path": "BMC_CLASIFICADOR",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMC_Type_Indicator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Checksum_Valid": {
+            "direction": "I"
+          },
+          "o_Type": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "RESPUESTA_SERIAL": {
+        "vlnv": "xilinx.com:module_ref:BMC_UART_Response_Generator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMC_UART_Response_Ge_0_0",
+        "xci_path": "ip/Top_BMC_UART_Response_Ge_0_0/Top_BMC_UART_Response_Ge_0_0.xci",
+        "inst_hier_path": "RESPUESTA_SERIAL",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMC_UART_Response_Generator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_CMD": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_MCN": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_TN": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Data_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Data_Type": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Data_MCN": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Data_SRC": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_Data_DST": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Response_Byte_0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Response_Byte_1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Response_Byte_2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Response_Byte_3": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Response": {
+            "direction": "O",
+            "left": "2047",
+            "right": "0"
+          },
+          "o_Response_Num_Bytes": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "DEBOUNCER_RESET": {
+        "vlnv": "xilinx.com:module_ref:Debouncer:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_Debouncer_0_2",
+        "xci_path": "ip/Top_Debouncer_0_2/Top_Debouncer_0_2.xci",
+        "inst_hier_path": "DEBOUNCER_RESET",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Button": {
+            "direction": "I"
+          },
+          "o_Out": {
+            "direction": "O"
+          }
+        }
+      },
+      "GENERADOR_DE_PULSO_RESET": {
+        "vlnv": "xilinx.com:module_ref:PulseGenerator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_PulseGenerator_0_1",
+        "xci_path": "ip/Top_PulseGenerator_0_1/Top_PulseGenerator_0_1.xci",
+        "inst_hier_path": "GENERADOR_DE_PULSO_RESET",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PulseGenerator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Button": {
+            "direction": "I"
+          },
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "o_Pulse": {
+            "direction": "O"
+          },
+          "o_NChanges": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "Top_xlconstant_0_5",
+        "xci_path": "ip/Top_xlconstant_0_5/Top_xlconstant_0_5.xci",
+        "inst_hier_path": "xlconstant_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "UART_CARGADOR": {
+        "vlnv": "xilinx.com:module_ref:UART_Loader:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_UART_Loader_0_0",
+        "xci_path": "ip/Top_UART_Loader_0_0/Top_UART_Loader_0_0.xci",
+        "inst_hier_path": "UART_CARGADOR",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UART_Loader",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_Load": {
+            "direction": "I"
+          },
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "i_TX_Active": {
+            "direction": "I"
+          },
+          "i_TX_Done": {
+            "direction": "I"
+          },
+          "o_Byte": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_SM_Main": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_TX_DV": {
+            "direction": "O"
+          }
+        }
+      },
+      "GENERADOR_DE_PULSO_BOTON": {
+        "vlnv": "xilinx.com:module_ref:PulseGenerator:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_PulseGenerator_1_0",
+        "xci_path": "ip/Top_PulseGenerator_1_0/Top_PulseGenerator_1_0.xci",
+        "inst_hier_path": "GENERADOR_DE_PULSO_BOTON",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PulseGenerator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Button": {
+            "direction": "I"
+          },
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "o_Pulse": {
+            "direction": "O"
+          },
+          "o_NChanges": {
+            "direction": "O"
+          }
+        }
+      },
+      "DEBOUNCER_BOTON": {
+        "vlnv": "xilinx.com:module_ref:Debouncer:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_Debouncer_1_0",
+        "xci_path": "ip/Top_Debouncer_1_0/Top_Debouncer_1_0.xci",
+        "inst_hier_path": "DEBOUNCER_BOTON",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Button": {
+            "direction": "I"
+          },
+          "o_Out": {
+            "direction": "O"
+          }
+        }
+      },
+      "UART_EMISOR_BYTE": {
+        "vlnv": "xilinx.com:module_ref:UART_Sender:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_UART_Sender_0_0",
+        "xci_path": "ip/Top_UART_Sender_0_0/Top_UART_Sender_0_0.xci",
+        "inst_hier_path": "UART_EMISOR_BYTE",
+        "parameters": {
+          "CLKS_PER_BIT": {
+            "value": "272"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UART_Sender",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Rst_L": {
+            "direction": "I"
+          },
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_TX_DV": {
+            "direction": "I"
+          },
+          "i_TX_Byte": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "o_TX_Active": {
+            "direction": "O"
+          },
+          "o_TX_Serial": {
+            "direction": "O"
+          },
+          "o_TX_Done": {
+            "direction": "O"
+          },
+          "o_State": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          }
+        }
+      },
+      "BMC_CODIFICADOR": {
+        "vlnv": "xilinx.com:module_ref:BMCEncoder:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMCEncoder_0_0",
+        "xci_path": "ip/Top_BMCEncoder_0_0/Top_BMCEncoder_0_0.xci",
+        "inst_hier_path": "BMC_CODIFICADOR",
+        "parameters": {
+          "CLKS_PER_BIT": {
+            "value": "42"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMCEncoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_Enable": {
+            "direction": "I"
+          },
+          "i_Data": {
+            "direction": "I",
+            "left": "1023",
+            "right": "0"
+          },
+          "i_Data_Size": {
+            "direction": "I",
+            "left": "16",
+            "right": "0"
+          },
+          "o_Bit_index": {
+            "direction": "O",
+            "left": "128",
+            "right": "0"
+          },
+          "o_SM_Main": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Data": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Ready": {
+            "direction": "O"
+          },
+          "o_BMC": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "Top_xlconstant_0_8",
+        "xci_path": "ip/Top_xlconstant_0_8/Top_xlconstant_0_8.xci",
+        "inst_hier_path": "xlconstant_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0xC269D53FFF"
+          },
+          "CONST_WIDTH": {
+            "value": "1024"
+          }
+        }
+      },
+      "xlconstant_2": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "Top_xlconstant_0_9",
+        "xci_path": "ip/Top_xlconstant_0_9/Top_xlconstant_0_9.xci",
+        "inst_hier_path": "xlconstant_2",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "40"
+          },
+          "CONST_WIDTH": {
+            "value": "17"
+          }
+        }
+      },
+      "BMC_DETECTOR_END_OF_MESSAGE": {
+        "vlnv": "xilinx.com:module_ref:EOMDetector:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_EOMDetector_0_0",
+        "xci_path": "ip/Top_EOMDetector_0_0/Top_EOMDetector_0_0.xci",
+        "inst_hier_path": "BMC_DETECTOR_END_OF_MESSAGE",
+        "parameters": {
+          "CLKS_PER_BIT": {
+            "value": "42"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "EOMDetector",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_RX_BMC": {
+            "direction": "I"
+          },
+          "o_EOM": {
+            "direction": "O"
+          },
+          "o_Valid_Msg": {
+            "direction": "O"
+          },
+          "o_SM_Main": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "BMC_DECODIFICADOR": {
+        "vlnv": "xilinx.com:module_ref:BMCDecoder:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_BMCDecoder_0_0",
+        "xci_path": "ip/Top_BMCDecoder_0_0/Top_BMCDecoder_0_0.xci",
+        "inst_hier_path": "BMC_DECODIFICADOR",
+        "parameters": {
+          "CLKS_PER_BIT": {
+            "value": "42"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BMCDecoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_In_BMC": {
+            "direction": "I"
+          },
+          "i_EOM": {
+            "direction": "I"
+          },
+          "o_BMC_Ready": {
+            "direction": "O"
+          },
+          "o_Data": {
+            "direction": "O",
+            "left": "2047",
+            "right": "0"
+          },
+          "o_Num_Bytes": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "MEMORIA": {
+        "vlnv": "xilinx.com:module_ref:Memory:1.0",
+        "ip_revision": "1",
+        "xci_name": "Top_Memory_0_0",
+        "xci_path": "ip/Top_Memory_0_0/Top_Memory_0_0.xci",
+        "inst_hier_path": "MEMORIA",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Memory",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_Clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_Reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Top_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "i_Reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "i_Load": {
+            "direction": "I"
+          },
+          "i_Data": {
+            "direction": "I",
+            "left": "2047",
+            "right": "0"
+          },
+          "i_Num_Bytes": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "o_Data": {
+            "direction": "O",
+            "left": "2047",
+            "right": "0"
+          },
+          "o_Num_Bytes": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "BMCDecoder_0_o_BMC_Ready": {
+        "ports": [
+          "BMC_DECODIFICADOR/o_BMC_Ready",
+          "MEMORIA/i_Load",
+          "UART_CARGADOR/i_Load"
+        ]
+      },
+      "BMCEncoder_0_o_BMC": {
+        "ports": [
+          "BMC_CODIFICADOR/o_BMC",
+          "BMC_Out",
+          "led1_r"
+        ]
+      },
+      "BMC_Checksum_Validat_0_o_Checksum_Valid": {
+        "ports": [
+          "BMC_VALIDADOR_CHECKSUM/o_Checksum_Valid",
+          "led0_b",
+          "BMC_CLASIFICADOR/i_Checksum_Valid"
+        ]
+      },
+      "BMC_DST_Indicator_1_o_DST": {
+        "ports": [
+          "BMC_DST/o_DST",
+          "RESPUESTA_SERIAL/i_Data_DST",
+          "ja"
+        ]
+      },
+      "BMC_In_1": {
+        "ports": [
+          "BMC_In",
+          "BMC_DETECTOR_END_OF_MESSAGE/i_RX_BMC",
+          "BMC_DECODIFICADOR/i_In_BMC"
+        ]
+      },
+      "BMC_SRC_Indicator_1_o_SRC": {
+        "ports": [
+          "BMC_SRC/o_SRC",
+          "RESPUESTA_SERIAL/i_Data_SRC"
+        ]
+      },
+      "BMC_Type_Indicator_1_o_Type": {
+        "ports": [
+          "BMC_CLASIFICADOR/o_Type",
+          "BMC_SRC/i_Type",
+          "RESPUESTA_SERIAL/i_Data_Type",
+          "BMC_DST/i_Type"
+        ]
+      },
+      "Debouncer_0_o_Out": {
+        "ports": [
+          "DEBOUNCER_RESET/o_Out",
+          "GENERADOR_DE_PULSO_RESET/i_Button"
+        ]
+      },
+      "Debouncer_1_o_Out": {
+        "ports": [
+          "DEBOUNCER_BOTON/o_Out",
+          "GENERADOR_DE_PULSO_BOTON/i_Button"
+        ]
+      },
+      "EJEMPLO_BR_dout": {
+        "ports": [
+          "BMC_DECODIFICADOR/o_Data",
+          "MEMORIA/i_Data",
+          "RESPUESTA_SERIAL/i_Data"
+        ]
+      },
+      "EOMDetector_0_o_EOM": {
+        "ports": [
+          "BMC_DETECTOR_END_OF_MESSAGE/o_EOM",
+          "BMC_DECODIFICADOR/i_EOM"
+        ]
+      },
+      "Memory_0_o_Data": {
+        "ports": [
+          "MEMORIA/o_Data",
+          "BMC_SRC/i_Data",
+          "BMC_DST/i_Data",
+          "BMC_CLASIFICADOR/i_Data",
+          "BMC_VALIDADOR_CHECKSUM/i_Data"
+        ]
+      },
+      "Memory_0_o_Num_Bytes": {
+        "ports": [
+          "MEMORIA/o_Num_Bytes",
+          "BMC_SRC/i_Num_Bytes",
+          "BMC_DST/i_Num_Bytes",
+          "BMC_CLASIFICADOR/i_Num_Bytes",
+          "BMC_VALIDADOR_CHECKSUM/i_Num_Bytes"
+        ]
+      },
+      "N_EJEMPLO_BR_dout": {
+        "ports": [
+          "BMC_DECODIFICADOR/o_Num_Bytes",
+          "MEMORIA/i_Num_Bytes",
+          "RESPUESTA_SERIAL/i_Data_Num_Bytes"
+        ]
+      },
+      "PulseGenerator_0_o_Pulse": {
+        "ports": [
+          "GENERADOR_DE_PULSO_RESET/o_Pulse",
+          "UART_COMANDO_CONFIGURACION/i_Reset",
+          "UART_EMISOR_BYTE/i_Rst_L",
+          "BMC_DETECTOR_END_OF_MESSAGE/i_Reset",
+          "BMC_CODIFICADOR/i_Reset",
+          "MEMORIA/i_Reset",
+          "UART_CARGADOR/i_Reset",
+          "BMC_DECODIFICADOR/i_Reset"
+        ]
+      },
+      "PulseGenerator_1_o_Pulse": {
+        "ports": [
+          "GENERADOR_DE_PULSO_BOTON/o_Pulse",
+          "BMC_CODIFICADOR/i_Enable"
+        ]
+      },
+      "RESPUESTA_SERIAL_o_Response": {
+        "ports": [
+          "RESPUESTA_SERIAL/o_Response",
+          "UART_CARGADOR/i_Data"
+        ]
+      },
+      "RESPUESTA_SERIAL_o_Response_Num_Bytes": {
+        "ports": [
+          "RESPUESTA_SERIAL/o_Response_Num_Bytes",
+          "UART_CARGADOR/i_Num_Bytes"
+        ]
+      },
+      "UART_COMANDO_o_CMD": {
+        "ports": [
+          "UART_COMANDO_CONFIGURACION/o_CMD",
+          "RESPUESTA_SERIAL/i_CMD"
+        ]
+      },
+      "UART_COMANDO_o_MCN": {
+        "ports": [
+          "UART_COMANDO_CONFIGURACION/o_MCN",
+          "RESPUESTA_SERIAL/i_MCN"
+        ]
+      },
+      "UART_COMANDO_o_TN": {
+        "ports": [
+          "UART_COMANDO_CONFIGURACION/o_TN",
+          "RESPUESTA_SERIAL/i_TN"
+        ]
+      },
+      "UART_Loader_0_o_Byte": {
+        "ports": [
+          "UART_CARGADOR/o_Byte",
+          "UART_EMISOR_BYTE/i_TX_Byte"
+        ]
+      },
+      "UART_Loader_0_o_TX_DV": {
+        "ports": [
+          "UART_CARGADOR/o_TX_DV",
+          "UART_EMISOR_BYTE/i_TX_DV"
+        ]
+      },
+      "UART_RX_o_RX_Byte": {
+        "ports": [
+          "UART_RECEPTOR/o_RX_Byte",
+          "UART_COMANDO_CONFIGURACION/i_Byte"
+        ]
+      },
+      "UART_RX_o_RX_DV": {
+        "ports": [
+          "UART_RECEPTOR/o_RX_DV",
+          "UART_COMANDO_CONFIGURACION/i_TX_DV"
+        ]
+      },
+      "UART_Sender_0_o_TX_Active": {
+        "ports": [
+          "UART_EMISOR_BYTE/o_TX_Active",
+          "UART_CARGADOR/i_TX_Active"
+        ]
+      },
+      "UART_Sender_0_o_TX_Done": {
+        "ports": [
+          "UART_EMISOR_BYTE/o_TX_Done",
+          "UART_CARGADOR/i_TX_Done"
+        ]
+      },
+      "UART_Sender_0_o_TX_Serial": {
+        "ports": [
+          "UART_EMISOR_BYTE/o_TX_Serial",
+          "UART_TX"
+        ]
+      },
+      "i_Button_0_1": {
+        "ports": [
+          "i_Button",
+          "DEBOUNCER_BOTON/i_Button"
+        ]
+      },
+      "i_Clock_0_1": {
+        "ports": [
+          "clk",
+          "UART_RECEPTOR/i_Clock",
+          "UART_COMANDO_CONFIGURACION/i_Clock",
+          "GENERADOR_DE_PULSO_RESET/i_Clock",
+          "DEBOUNCER_RESET/i_Clock",
+          "DEBOUNCER_BOTON/i_Clock",
+          "GENERADOR_DE_PULSO_BOTON/i_Clock",
+          "UART_EMISOR_BYTE/i_Clock",
+          "BMC_DETECTOR_END_OF_MESSAGE/i_Clock",
+          "BMC_CODIFICADOR/i_Clock",
+          "MEMORIA/i_Clock",
+          "UART_CARGADOR/i_Clock",
+          "BMC_DECODIFICADOR/i_Clock"
+        ]
+      },
+      "i_RX_Serial_0_1": {
+        "ports": [
+          "UART_RX",
+          "UART_RECEPTOR/i_RX_Serial"
+        ]
+      },
+      "i_Reset_1": {
+        "ports": [
+          "i_Reset",
+          "DEBOUNCER_RESET/i_Button"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "RESPUESTA_SERIAL/i_Data_MCN"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "BMC_CODIFICADOR/i_Data"
+        ]
+      },
+      "xlconstant_2_dout": {
+        "ports": [
+          "xlconstant_2/dout",
+          "BMC_CODIFICADOR/i_Data_Size"
+        ]
+      }
+    }
+  }
+}

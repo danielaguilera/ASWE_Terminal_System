@@ -1,0 +1,836 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed May 15 15:19:16 2024
+# Process ID: 969013
+# Current directory: /home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.runs/synth_1
+# Command line: vivado -log Top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_wrapper.tcl
+# Log file: /home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.runs/synth_1/Top_wrapper.vds
+# Journal file: /home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.runs/synth_1/vivado.jou
+# Running On: mgmt, OS: Linux, CPU Frequency: 4202.560 MHz, CPU Physical cores: 6, Host memory: 16498 MB
+#-----------------------------------------------------------
+source Top_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.2/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental /home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/utils_1/imports/synth_1/BMCEncoder.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/utils_1/imports/synth_1/BMCEncoder.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Top_wrapper -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 969076
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2114.449 ; gain = 402.660 ; free physical = 4845 ; free virtual = 10218
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'o_State', assumed default net type 'wire' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:56]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'UART_Receiver' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:44]
+WARNING: [Synth 8-11065] parameter 'RX_START_BIT' becomes localparam in 'UART_Receiver' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:45]
+WARNING: [Synth 8-11065] parameter 'RX_DATA_BITS' becomes localparam in 'UART_Receiver' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:46]
+WARNING: [Synth 8-11065] parameter 'RX_STOP_BIT' becomes localparam in 'UART_Receiver' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:47]
+WARNING: [Synth 8-11065] parameter 'CLEANUP' becomes localparam in 'UART_Receiver' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:48]
+WARNING: [Synth 8-10929] literal value 'h0xFF truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:66]
+WARNING: [Synth 8-10929] literal value 'h0xEE truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:80]
+WARNING: [Synth 8-10929] literal value 'h0x11 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x12 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x13 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x21 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x22 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x31 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x32 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:95]
+WARNING: [Synth 8-10929] literal value 'h0x40 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_DST_Indicator.v:43]
+WARNING: [Synth 8-10929] literal value 'h0x11 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:50]
+WARNING: [Synth 8-10929] literal value 'h0xFF truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:55]
+WARNING: [Synth 8-10929] literal value 'h0x12 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:65]
+WARNING: [Synth 8-10929] literal value 'h0xFF truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:70]
+WARNING: [Synth 8-10929] literal value 'h0x13 truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:80]
+WARNING: [Synth 8-10929] literal value 'h0xFF truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:85]
+WARNING: [Synth 8-10929] literal value 'h0xFF truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:93]
+WARNING: [Synth 8-10929] literal value 'h0xFF truncated to fit in 8 bits [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:96]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'UART_Sender' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:29]
+WARNING: [Synth 8-11065] parameter 'TX_START_BIT' becomes localparam in 'UART_Sender' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:30]
+WARNING: [Synth 8-11065] parameter 'TX_DATA_BITS' becomes localparam in 'UART_Sender' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:31]
+WARNING: [Synth 8-11065] parameter 'TX_STOP_BIT' becomes localparam in 'UART_Sender' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:32]
+INFO: [Synth 8-11241] undeclared symbol 'o_Bit_Index', assumed default net type 'wire' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:52]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'BMCEncoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:38]
+WARNING: [Synth 8-11065] parameter 'MESSAGE' becomes localparam in 'BMCEncoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:39]
+WARNING: [Synth 8-11065] parameter 'END' becomes localparam in 'BMCEncoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:40]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:40]
+WARNING: [Synth 8-11065] parameter 'START' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:41]
+WARNING: [Synth 8-11065] parameter 'S0' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:42]
+WARNING: [Synth 8-11065] parameter 'S1' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:43]
+WARNING: [Synth 8-11065] parameter 'S2' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:44]
+WARNING: [Synth 8-11065] parameter 'S3' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:45]
+WARNING: [Synth 8-11065] parameter 'S4' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:46]
+WARNING: [Synth 8-11065] parameter 'S5' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:47]
+WARNING: [Synth 8-11065] parameter 'S6' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:48]
+WARNING: [Synth 8-11065] parameter 'CLEANUP' becomes localparam in 'EOMDetector' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:49]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'BMCDecoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:48]
+WARNING: [Synth 8-11065] parameter 'START_BIT' becomes localparam in 'BMCDecoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:49]
+WARNING: [Synth 8-11065] parameter 'DATA' becomes localparam in 'BMCDecoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:50]
+WARNING: [Synth 8-11065] parameter 'CLEANUP' becomes localparam in 'BMCDecoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:51]
+WARNING: [Synth 8-11065] parameter 'SEND_BYTE' becomes localparam in 'BMCDecoder' with formal parameter declaration list [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:52]
+INFO: [Synth 8-6157] synthesizing module 'Top_wrapper' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/hdl/Top_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'Top' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:13]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMCDecoder_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMCDecoder_0_0/synth/Top_BMCDecoder_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMCDecoder' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:23]
+	Parameter CLKS_PER_BIT bound to: 42 - type: integer 
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:59]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'BMCDecoder' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMCDecoder_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMCDecoder_0_0/synth/Top_BMCDecoder_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMCEncoder_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMCEncoder_0_0/synth/Top_BMCEncoder_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMCEncoder' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:23]
+	Parameter CLKS_PER_BIT bound to: 42 - type: integer 
+	Parameter DATA_WIDTH bound to: 1024 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'BMCEncoder' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMCEncoder_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMCEncoder_0_0/synth/Top_BMCEncoder_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_Bit_index' of module 'Top_BMCEncoder_0_0' is unconnected for instance 'BMCEncoder_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:90]
+WARNING: [Synth 8-7071] port 'o_SM_Main' of module 'Top_BMCEncoder_0_0' is unconnected for instance 'BMCEncoder_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:90]
+WARNING: [Synth 8-7071] port 'o_Data' of module 'Top_BMCEncoder_0_0' is unconnected for instance 'BMCEncoder_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:90]
+WARNING: [Synth 8-7071] port 'o_Ready' of module 'Top_BMCEncoder_0_0' is unconnected for instance 'BMCEncoder_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:90]
+WARNING: [Synth 8-7023] instance 'BMCEncoder_0' of module 'Top_BMCEncoder_0_0' has 10 connections declared, but only 6 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:90]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMC_Checksum_Validat_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_Checksum_Validat_0_0/synth/Top_BMC_Checksum_Validat_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMC_Checksum_Validator' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_Checksum_Validator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BMC_Checksum_Validator' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_Checksum_Validator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMC_Checksum_Validat_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_Checksum_Validat_0_0/synth/Top_BMC_Checksum_Validat_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_Checksum' of module 'Top_BMC_Checksum_Validat_0_0' is unconnected for instance 'BMC_Checksum_Validat_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:97]
+WARNING: [Synth 8-7071] port 'o_ECF' of module 'Top_BMC_Checksum_Validat_0_0' is unconnected for instance 'BMC_Checksum_Validat_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:97]
+WARNING: [Synth 8-7023] instance 'BMC_Checksum_Validat_0' of module 'Top_BMC_Checksum_Validat_0_0' has 5 connections declared, but only 3 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:97]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMC_DST_Indicator_0_1' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_DST_Indicator_0_1/synth/Top_BMC_DST_Indicator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMC_DST_Indicator' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_DST_Indicator.v:23]
+	Parameter INVALID bound to: 8'b00000000 
+	Parameter PTT bound to: 8'b00000001 
+	Parameter NTT bound to: 8'b00000010 
+	Parameter NR bound to: 8'b00000011 
+	Parameter PTP bound to: 8'b00000100 
+	Parameter BR bound to: 8'b00000101 
+INFO: [Synth 8-6155] done synthesizing module 'BMC_DST_Indicator' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_DST_Indicator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMC_DST_Indicator_0_1' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_DST_Indicator_0_1/synth/Top_BMC_DST_Indicator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMC_SRC_Indicator_0_1' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_SRC_Indicator_0_1/synth/Top_BMC_SRC_Indicator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMC_SRC_Indicator' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_SRC_Indicator.v:23]
+	Parameter INVALID bound to: 8'b00000000 
+	Parameter PTT bound to: 8'b00000001 
+	Parameter NTT bound to: 8'b00000010 
+	Parameter NR bound to: 8'b00000011 
+	Parameter PTP bound to: 8'b00000100 
+	Parameter BR bound to: 8'b00000101 
+INFO: [Synth 8-6155] done synthesizing module 'BMC_SRC_Indicator' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_SRC_Indicator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMC_SRC_Indicator_0_1' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_SRC_Indicator_0_1/synth/Top_BMC_SRC_Indicator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMC_Type_Indicator_0_1' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_Type_Indicator_0_1/synth/Top_BMC_Type_Indicator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMC_Type_Indicator' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_Type_Indicator.v:23]
+	Parameter INVALID bound to: 8'b00000000 
+	Parameter PTT bound to: 8'b00000001 
+	Parameter NTT bound to: 8'b00000010 
+	Parameter NR bound to: 8'b00000011 
+	Parameter PTP bound to: 8'b00000100 
+	Parameter BR bound to: 8'b00000101 
+INFO: [Synth 8-6155] done synthesizing module 'BMC_Type_Indicator' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_Type_Indicator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMC_Type_Indicator_0_1' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_Type_Indicator_0_1/synth/Top_BMC_Type_Indicator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_Debouncer_0_2' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_Debouncer_0_2/synth/Top_Debouncer_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Debouncer' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/Debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Debouncer' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/Debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Debouncer_0_2' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_Debouncer_0_2/synth/Top_Debouncer_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_Debouncer_1_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_Debouncer_1_0/synth/Top_Debouncer_1_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Debouncer_1_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_Debouncer_1_0/synth/Top_Debouncer_1_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_EOMDetector_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_EOMDetector_0_0/synth/Top_EOMDetector_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'EOMDetector' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:24]
+	Parameter CLKS_PER_BIT bound to: 42 - type: integer 
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:57]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'EOMDetector' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/EOMDetector.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Top_EOMDetector_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_EOMDetector_0_0/synth/Top_EOMDetector_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_Valid_Msg' of module 'Top_EOMDetector_0_0' is unconnected for instance 'EOMDetector_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:124]
+WARNING: [Synth 8-7071] port 'o_SM_Main' of module 'Top_EOMDetector_0_0' is unconnected for instance 'EOMDetector_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:124]
+WARNING: [Synth 8-7023] instance 'EOMDetector_0' of module 'Top_EOMDetector_0_0' has 6 connections declared, but only 4 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:124]
+INFO: [Synth 8-6157] synthesizing module 'Top_Memory_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_Memory_0_0/synth/Top_Memory_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Memory' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/Memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Memory' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/Memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Memory_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_Memory_0_0/synth/Top_Memory_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_PulseGenerator_0_1' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_PulseGenerator_0_1/synth/Top_PulseGenerator_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'PulseGenerator' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/PulseGenerator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PulseGenerator' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/PulseGenerator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_PulseGenerator_0_1' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_PulseGenerator_0_1/synth/Top_PulseGenerator_0_1.v:53]
+WARNING: [Synth 8-7071] port 'o_NChanges' of module 'Top_PulseGenerator_0_1' is unconnected for instance 'PulseGenerator_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:137]
+WARNING: [Synth 8-7023] instance 'PulseGenerator_0' of module 'Top_PulseGenerator_0_1' has 4 connections declared, but only 3 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:137]
+INFO: [Synth 8-6157] synthesizing module 'Top_PulseGenerator_1_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_PulseGenerator_1_0/synth/Top_PulseGenerator_1_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'Top_PulseGenerator_1_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_PulseGenerator_1_0/synth/Top_PulseGenerator_1_0.v:53]
+WARNING: [Synth 8-7071] port 'o_NChanges' of module 'Top_PulseGenerator_1_0' is unconnected for instance 'PulseGenerator_1' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:141]
+WARNING: [Synth 8-7023] instance 'PulseGenerator_1' of module 'Top_PulseGenerator_1_0' has 4 connections declared, but only 3 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:141]
+INFO: [Synth 8-6157] synthesizing module 'Top_BMC_UART_Response_Ge_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_UART_Response_Ge_0_0/synth/Top_BMC_UART_Response_Ge_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'BMC_UART_Response_Generator' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BMC_UART_Response_Generator' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_BMC_UART_Response_Ge_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_UART_Response_Ge_0_0/synth/Top_BMC_UART_Response_Ge_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_Response_Byte_0' of module 'Top_BMC_UART_Response_Ge_0_0' is unconnected for instance 'RESPUESTA_SERIAL' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:145]
+WARNING: [Synth 8-7071] port 'o_Response_Byte_1' of module 'Top_BMC_UART_Response_Ge_0_0' is unconnected for instance 'RESPUESTA_SERIAL' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:145]
+WARNING: [Synth 8-7071] port 'o_Response_Byte_2' of module 'Top_BMC_UART_Response_Ge_0_0' is unconnected for instance 'RESPUESTA_SERIAL' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:145]
+WARNING: [Synth 8-7071] port 'o_Response_Byte_3' of module 'Top_BMC_UART_Response_Ge_0_0' is unconnected for instance 'RESPUESTA_SERIAL' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:145]
+WARNING: [Synth 8-7023] instance 'RESPUESTA_SERIAL' of module 'Top_BMC_UART_Response_Ge_0_0' has 15 connections declared, but only 11 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:145]
+INFO: [Synth 8-6157] synthesizing module 'Top_UART_Command_Interpr_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Command_Interpr_0_0/synth/Top_UART_Command_Interpr_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'UART_Command_Interpreter' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:23]
+	Parameter IDLE bound to: 3'b000 
+	Parameter FF bound to: 3'b001 
+	Parameter EE bound to: 3'b010 
+	Parameter CMD bound to: 3'b011 
+	Parameter TN bound to: 3'b100 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:61]
+INFO: [Synth 8-6155] done synthesizing module 'UART_Command_Interpreter' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Command_Interpreter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_UART_Command_Interpr_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Command_Interpr_0_0/synth/Top_UART_Command_Interpr_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_SM_Main' of module 'Top_UART_Command_Interpr_0_0' is unconnected for instance 'UART_COMANDO' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:157]
+WARNING: [Synth 8-7023] instance 'UART_COMANDO' of module 'Top_UART_Command_Interpr_0_0' has 8 connections declared, but only 7 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:157]
+INFO: [Synth 8-6157] synthesizing module 'Top_UART_Loader_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Loader_0_0/synth/Top_UART_Loader_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'UART_Loader' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Loader.v:23]
+	Parameter IDLE bound to: 2'b00 
+	Parameter QUEUE bound to: 2'b01 
+	Parameter CLEANUP bound to: 2'b10 
+	Parameter SENDING bound to: 2'b11 
+	Parameter CLEANUP_TIME bound to: 15'b000101110111000 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Loader.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'UART_Loader' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Loader.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Top_UART_Loader_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Loader_0_0/synth/Top_UART_Loader_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_SM_Main' of module 'Top_UART_Loader_0_0' is unconnected for instance 'UART_Loader_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:165]
+WARNING: [Synth 8-7023] instance 'UART_Loader_0' of module 'Top_UART_Loader_0_0' has 10 connections declared, but only 9 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:165]
+INFO: [Synth 8-6157] synthesizing module 'Top_UART_Receiver_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Receiver_0_0/synth/Top_UART_Receiver_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'UART_Receiver' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:35]
+	Parameter CLKS_PER_BIT bound to: 272 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'UART_Receiver' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UARTReceiver.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'Top_UART_Receiver_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Receiver_0_0/synth/Top_UART_Receiver_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_UART_Sender_0_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Sender_0_0/synth/Top_UART_Sender_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'UART_Sender' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:16]
+	Parameter CLKS_PER_BIT bound to: 272 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'UART_Sender' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'Top_UART_Sender_0_0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_UART_Sender_0_0/synth/Top_UART_Sender_0_0.v:53]
+WARNING: [Synth 8-7071] port 'o_State' of module 'Top_UART_Sender_0_0' is unconnected for instance 'UART_Sender_0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:180]
+WARNING: [Synth 8-7023] instance 'UART_Sender_0' of module 'Top_UART_Sender_0_0' has 8 connections declared, but only 7 given [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:180]
+INFO: [Synth 8-6157] synthesizing module 'Top_xlconstant_0_5' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_xlconstant_0_5/synth/Top_xlconstant_0_5.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xlconstant_0_5' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_xlconstant_0_5/synth/Top_xlconstant_0_5.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_xlconstant_0_8' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_xlconstant_0_8/synth/Top_xlconstant_0_8.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized0' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized0' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xlconstant_0_8' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_xlconstant_0_8/synth/Top_xlconstant_0_8.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Top_xlconstant_0_9' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_xlconstant_0_9/synth/Top_xlconstant_0_9.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized1' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized1' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'Top_xlconstant_0_9' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_xlconstant_0_9/synth/Top_xlconstant_0_9.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'Top' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/synth/Top.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'Top_wrapper' (0#1) [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.gen/sources_1/bd/Top/hdl/Top_wrapper.v:13]
+WARNING: [Synth 8-6014] Unused sequential element r_Bit_Count_reg was removed.  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:80]
+WARNING: [Synth 8-3848] Net o_Bit_index in module/entity BMCEncoder does not have driver. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:31]
+WARNING: [Synth 8-3848] Net o_Ready in module/entity BMCEncoder does not have driver. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCEncoder.v:34]
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_Sum_reg' and it is trimmed from '16' to '8' bits. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_Checksum_Validator.v:36]
+WARNING: [Synth 8-3848] Net o_NChanges in module/entity PulseGenerator does not have driver. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/PulseGenerator.v:27]
+WARNING: [Synth 8-7137] Register o_TX_Done_reg in module UART_Sender has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:51]
+WARNING: [Synth 8-7137] Register o_TX_Serial_reg in module UART_Sender has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:56]
+WARNING: [Synth 8-7137] Register r_Clock_Count_reg in module UART_Sender has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:57]
+WARNING: [Synth 8-7137] Register r_Bit_Index_reg in module UART_Sender has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:58]
+WARNING: [Synth 8-7137] Register o_TX_Active_reg in module UART_Sender has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:62]
+WARNING: [Synth 8-7137] Register r_TX_Data_reg in module UART_Sender has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Sender.v:63]
+WARNING: [Synth 8-7129] Port i_TX_Done in module UART_Loader is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[7] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[6] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[5] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[4] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[3] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[2] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[1] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_MCN[0] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2047] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2046] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2045] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2044] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2043] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2042] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2041] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2040] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2039] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2038] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2037] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2036] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2035] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2034] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2033] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2032] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2031] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2030] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2029] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2028] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2027] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2026] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2025] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2024] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2023] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2022] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2021] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2020] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2019] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2018] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2017] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2016] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2015] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2014] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2013] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2012] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2011] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2010] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2009] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2008] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2007] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2006] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2005] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2004] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2003] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2002] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2001] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[2000] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1999] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1998] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1997] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1996] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1995] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1994] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1993] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1992] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1991] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1990] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1989] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1988] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1987] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1986] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1985] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1984] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1983] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1982] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1981] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1980] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1979] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1978] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1977] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1976] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1975] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1974] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1973] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1972] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1971] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1970] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1969] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1968] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1967] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1966] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1965] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1964] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1963] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1962] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1961] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1960] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1959] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1958] in module BMC_UART_Response_Generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_Data[1957] in module BMC_UART_Response_Generator is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2226.387 ; gain = 514.598 ; free physical = 4732 ; free virtual = 10107
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2244.199 ; gain = 532.410 ; free physical = 4720 ; free virtual = 10095
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2244.199 ; gain = 532.410 ; free physical = 4720 ; free virtual = 10095
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2244.199 ; gain = 0.000 ; free physical = 4719 ; free virtual = 10094
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led0_g'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0_r'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1_b'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1_g'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb[2]'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb[3]'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb[6]'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb[7]'. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/constrs_1/new/Eclypse-Z7-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2390.949 ; gain = 0.000 ; free physical = 4656 ; free virtual = 10031
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2390.984 ; gain = 0.000 ; free physical = 4656 ; free virtual = 10031
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 4656 ; free virtual = 10030
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 4656 ; free virtual = 10030
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/UART_RX_RnM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/UART_COMANDO. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/BMC_Checksum_Validat_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/BMC_DST_Indicator_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/BMC_SRC_Indicator_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/BMC_Type_Indicator_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/RESPUESTA_SERIAL. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/Debouncer_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/PulseGenerator_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/xlconstant_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/UART_Loader_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/PulseGenerator_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/Debouncer_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/UART_Sender_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/BMCEncoder_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/xlconstant_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/xlconstant_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/EOMDetector_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/BMCDecoder_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Top_i/Memory_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 4656 ; free virtual = 10030
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 4653 ; free virtual = 10029
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6702] IncrSynth : Over 50% of partitions are impacted by design changes. Reverting to default synthesis
+WARNING: [Synth 8-6702] IncrSynth : Reverting to default synthesis
+Top__GCB2---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 4653 ; free virtual = 10029
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'BMCEncoder'
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'EOMDetector'
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'UART_Command_Interpreter'
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'UART_Sender'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                              000
+                 MESSAGE |                              010 |                              001
+                     END |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'one-hot' in module 'BMCEncoder'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                       0000000001 |                             0000
+                   START |                       0000000010 |                             0001
+                      S0 |                       0000000100 |                             0010
+                      S1 |                       0000001000 |                             0011
+                      S2 |                       0000010000 |                             0100
+                      S3 |                       0000100000 |                             0101
+                      S4 |                       0001000000 |                             0110
+                      S5 |                       0010000000 |                             0111
+                      S6 |                       0100000000 |                             1000
+                 CLEANUP |                       1000000000 |                             1001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'one-hot' in module 'EOMDetector'
+WARNING: [Synth 8-327] inferring latch for variable 'o_Response_reg' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMC_UART_Response_Generator.v:42]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                      FF |                              001 |                              001
+                      EE |                              010 |                              010
+                     CMD |                              011 |                              011
+                      TN |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'sequential' in module 'UART_Command_Interpreter'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                              000
+            TX_START_BIT |                               01 |                              001
+            TX_DATA_BITS |                               10 |                              010
+             TX_STOP_BIT |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'sequential' in module 'UART_Sender'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 4627 ; free virtual = 10003
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : Change is too high
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input  129 Bit       Adders := 1     
+	   2 Input   41 Bit       Adders := 2     
+	   2 Input   31 Bit       Adders := 1     
+	   2 Input   20 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	  80 Input    8 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	             2048 Bit    Registers := 3     
+	             1024 Bit    Registers := 1     
+	              129 Bit    Registers := 1     
+	               41 Bit    Registers := 2     
+	               20 Bit    Registers := 2     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 2     
+	                8 Bit    Registers := 12    
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 17    
++---Muxes : 
+	   2 Input 2048 Bit        Muxes := 12    
+	   4 Input 2048 Bit        Muxes := 3     
+	   3 Input 2048 Bit        Muxes := 1     
+	   2 Input 1024 Bit        Muxes := 1     
+	   2 Input  129 Bit        Muxes := 2     
+	   3 Input  129 Bit        Muxes := 1     
+	   2 Input   41 Bit        Muxes := 7     
+	   4 Input   41 Bit        Muxes := 1     
+	  10 Input   41 Bit        Muxes := 1     
+	   3 Input   31 Bit        Muxes := 3     
+	   2 Input   31 Bit        Muxes := 3     
+	   2 Input   20 Bit        Muxes := 2     
+	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input   16 Bit        Muxes := 1     
+	   4 Input   14 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
+	   6 Input   14 Bit        Muxes := 1     
+	  10 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 17    
+	   2 Input    8 Bit        Muxes := 14    
+	   5 Input    8 Bit        Muxes := 3     
+	   6 Input    8 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 20    
+	   4 Input    3 Bit        Muxes := 3     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 13    
+	   4 Input    2 Bit        Muxes := 4     
+	   3 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 55    
+	   4 Input    1 Bit        Muxes := 18    
+	   5 Input    1 Bit        Muxes := 4     
+	   6 Input    1 Bit        Muxes := 2     
+	  10 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'r_Byte_Index_reg[15:0]' into 'r_Byte_Index_reg[15:0]' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Loader.v:73]
+INFO: [Synth 8-4471] merging register 'r_Byte_Index_reg[15:0]' into 'r_Byte_Index_reg[15:0]' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/UART_Loader.v:73]
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port o_SM_Main[7] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port o_SM_Main[6] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port o_SM_Main[5] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port o_SM_Main[4] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port o_SM_Main[3] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port o_SM_Main[2] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port P[2] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port P[1] driven by constant 0
+WARNING: [Synth 8-3917] design UART_Loader__GB1 has port P[0] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[24]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[25]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[25]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[26]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[26]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[27]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[27]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[28]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[28]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[29]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[29]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[30]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[30]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[31]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[32]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[33]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[33]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[34]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[34]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[35]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[35]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[36]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[36]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[37]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[37]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[38]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[38]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[39]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[39]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[40]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[40]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[41]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[41]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[42]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[42]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[43]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[43]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[44]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[44]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[45]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[45]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[46]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[46]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[47]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[47]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[48]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[48]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[49]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[49]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[50]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[50]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[51]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[51]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[52]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[52]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[53]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[53]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[54]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[54]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[55]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[55]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[56]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[56]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[57]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[57]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[58]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[58]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[59]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[59]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[60]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[60]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[61]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[61]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[62]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[62]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[63]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[63]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[64]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[64]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[65]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[65]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[66]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[66]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[67]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[67]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[68]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[68]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[69]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[69]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[70]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[70]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[71]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[71]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[72]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[72]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[73]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[73]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[74]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[74]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[75]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[75]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[76]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[76]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[77]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[77]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[78]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[78]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[79]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[79]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[80]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[80]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[81]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[81]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[82]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[82]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[83]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[83]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[84]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[84]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[85]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[85]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[86]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[86]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[87]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[87]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[88]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[88]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[89]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[89]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[90]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[90]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[91]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[91]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[92]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[92]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[93]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[93]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[94]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[94]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[95]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[95]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[96]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[96]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[97]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[97]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[98]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[98]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[99]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[99]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[100]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[100]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[101]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[101]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[102]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[102]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[103]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[103]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[104]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[104]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[105]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[105]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[106]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[106]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[107]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[107]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[108]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[108]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[109]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[109]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[110]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[110]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[111]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[111]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[112]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[112]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[113]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[113]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[114]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[114]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[115]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[115]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[116]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[116]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[117]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[117]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[118]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[118]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[119]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[119]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[120]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[120]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[121]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[121]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[122]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[122]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[123]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[123]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[124]'
+INFO: [Synth 8-3886] merging instance 'RESPUESTA_SERIAL/inst/o_Response_reg[124]' (LD) to 'RESPUESTA_SERIAL/inst/o_Response_reg[125]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (RESPUESTA_SERIAL/inst/\o_Response_reg[2047] )
+WARNING: [Synth 8-3332] Sequential element (o_Response_reg[2047]) is unused and will be removed from module BMC_UART_Response_Generator.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (UART_COMANDO/\inst/r_TN_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (UART_COMANDO/\inst/r_CMD_reg[2] )
+INFO: [Synth 8-4471] merging register 'r_Num_Bytes_reg[7:0]' into 'r_Num_Bytes_reg[7:0]' [/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.srcs/sources_1/new/BMCDecoder.v:46]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (UART_Sender_0/\inst/r_Clock_Count_reg[13] )
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BMCEncoder_0/\inst/r_Data_reg[768] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:31 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 168 ; free virtual = 4891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:33 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 162 ; free virtual = 4887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+info: optimization accepted worst group hill climbing move (-6756.0/oG. 155.0ps)
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 196 ; free virtual = 4880
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:41 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 165 ; free virtual = 4761
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   173|
+|3     |LUT1   |     7|
+|4     |LUT2   |   167|
+|5     |LUT3   |   387|
+|6     |LUT4   |   318|
+|7     |LUT5   |   901|
+|8     |LUT6   |   854|
+|9     |MUXF7  |   272|
+|10    |MUXF8  |   136|
+|11    |FDCE   |     2|
+|12    |FDRE   |  4576|
+|13    |LD     |     1|
+|14    |IBUF   |     5|
+|15    |OBUF   |    12|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:43 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 172 ; free virtual = 4764
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 214 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 2390.984 ; gain = 532.410 ; free physical = 5722 ; free virtual = 10315
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:47 . Memory (MB): peak = 2390.984 ; gain = 679.195 ; free physical = 5730 ; free virtual = 10315
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2390.984 ; gain = 0.000 ; free physical = 5728 ; free virtual = 10313
+INFO: [Netlist 29-17] Analyzing 582 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2414.961 ; gain = 0.000 ; free physical = 5723 ; free virtual = 10308
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instance 
+
+Synth Design complete | Checksum: 7e1117ea
+INFO: [Common 17-83] Releasing license: Synthesis
+230 Infos, 205 Warnings, 8 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:50 . Memory (MB): peak = 2414.996 ; gain = 1054.676 ; free physical = 5723 ; free virtual = 10309
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 7238.936; main = 1676.843; forked = 5717.896
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 12144.395; main = 2414.961; forked = 9777.453
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2438.973 ; gain = 0.000 ; free physical = 5723 ; free virtual = 10308
+INFO: [Common 17-1381] The checkpoint '/home/daguilera/Proyectos/Xilinx/ASWE_Terminal_System/ASWE_Terminal_System.runs/synth_1/Top_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_wrapper_utilization_synth.rpt -pb Top_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May 15 15:20:13 2024...

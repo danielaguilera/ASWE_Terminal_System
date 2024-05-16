@@ -1,0 +1,82 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.944555",
+   "Default View_TopLeft":"132,0",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -10 -y 330 -defaultsOSRD
+preplace port port-id_UART_RX -pg 1 -lvl 0 -x -10 -y 280 -defaultsOSRD
+preplace port port-id_i_Reset -pg 1 -lvl 0 -x -10 -y 360 -defaultsOSRD
+preplace port port-id_i_Button -pg 1 -lvl 0 -x -10 -y 680 -defaultsOSRD
+preplace port port-id_UART_TX -pg 1 -lvl 10 -x 3170 -y 400 -defaultsOSRD
+preplace port port-id_BMC_Out -pg 1 -lvl 10 -x 3170 -y 760 -defaultsOSRD
+preplace port port-id_BMC_In -pg 1 -lvl 0 -x -10 -y 460 -defaultsOSRD
+preplace port port-id_led1_r -pg 1 -lvl 10 -x 3170 -y 790 -defaultsOSRD
+preplace port port-id_led0_b -pg 1 -lvl 10 -x 3170 -y 600 -defaultsOSRD
+preplace portBus ja -pg 1 -lvl 10 -x 3170 -y 570 -defaultsOSRD
+preplace inst RESPUESTA_SERIAL -pg 1 -lvl 8 -x 2530 -y 140 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 7 -x 2050 -y 170 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 8 -x 2530 -y 770 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 8 -x 2530 -y 870 -defaultsOSRD
+preplace inst MEMORIA -pg 1 -lvl 5 -x 1330 -y 420 -defaultsOSRD
+preplace inst BMC_CLASIFICADOR -pg 1 -lvl 6 -x 1690 -y 410 -defaultsOSRD
+preplace inst BMC_DST -pg 1 -lvl 7 -x 2050 -y 290 -defaultsOSRD
+preplace inst BMC_SRC -pg 1 -lvl 7 -x 2050 -y 430 -defaultsOSRD
+preplace inst BMC_DECODIFICADOR -pg 1 -lvl 4 -x 970 -y 440 -defaultsOSRD
+preplace inst BMC_DETECTOR_END_OF_MESSAGE -pg 1 -lvl 3 -x 660 -y 440 -defaultsOSRD
+preplace inst UART_RECEPTOR -pg 1 -lvl 4 -x 970 -y 270 -defaultsOSRD
+preplace inst UART_COMANDO_CONFIGURACION -pg 1 -lvl 6 -x 1690 -y 260 -defaultsOSRD
+preplace inst DEBOUNCER_RESET -pg 1 -lvl 1 -x 130 -y 350 -defaultsOSRD
+preplace inst GENERADOR_DE_PULSO_RESET -pg 1 -lvl 2 -x 370 -y 360 -defaultsOSRD
+preplace inst DEBOUNCER_BOTON -pg 1 -lvl 7 -x 2050 -y 670 -defaultsOSRD
+preplace inst GENERADOR_DE_PULSO_BOTON -pg 1 -lvl 8 -x 2530 -y 660 -defaultsOSRD
+preplace inst BMC_VALIDADOR_CHECKSUM -pg 1 -lvl 9 -x 2950 -y 590 -defaultsOSRD
+preplace inst BMC_CODIFICADOR -pg 1 -lvl 9 -x 2950 -y 750 -defaultsOSRD
+preplace inst UART_CARGADOR -pg 1 -lvl 8 -x 2530 -y 400 -defaultsOSRD
+preplace inst UART_EMISOR_BYTE -pg 1 -lvl 9 -x 2950 -y 410 -defaultsOSRD
+preplace netloc BMCDecoder_0_o_BMC_Ready 1 4 4 1110 10 NJ 10 NJ 10 2280
+preplace netloc BMCEncoder_0_o_BMC 1 9 1 3150 760n
+preplace netloc BMC_Checksum_Validat_0_o_Checksum_Valid 1 5 5 1540 540 NJ 540 NJ 540 2750J 500 3140
+preplace netloc BMC_DST_Indicator_1_o_DST 1 7 3 2290 530 2760 510 3150
+preplace netloc BMC_In_1 1 0 4 NJ 460 NJ 460 510 360 810J
+preplace netloc BMC_SRC_Indicator_1_o_SRC 1 7 1 2250 200n
+preplace netloc BMC_Type_Indicator_1_o_Type 1 6 2 1860 90 2270J
+preplace netloc Debouncer_0_o_Out 1 1 1 N 350
+preplace netloc Debouncer_1_o_Out 1 7 1 2200 650n
+preplace netloc EJEMPLO_BR_dout 1 4 4 1120 20 NJ 20 NJ 20 2300
+preplace netloc EOMDetector_0_o_EOM 1 3 1 800 420n
+preplace netloc Memory_0_o_Data 1 5 4 1510 150 1880 50 2240J 580 NJ
+preplace netloc Memory_0_o_Num_Bytes 1 5 4 1530 160 1890 70 2220J 590 2760J
+preplace netloc N_EJEMPLO_BR_dout 1 4 4 1130 30 NJ 30 NJ 30 2290
+preplace netloc PulseGenerator_0_o_Pulse 1 2 7 500 350 820 350 1160 250 1520 40 NJ 40 2260 550 2770
+preplace netloc PulseGenerator_1_o_Pulse 1 8 1 2740 650n
+preplace netloc UART_COMANDO_o_CMD 1 6 2 1840 60 NJ
+preplace netloc UART_COMANDO_o_MCN 1 6 2 1870 80 NJ
+preplace netloc UART_COMANDO_o_TN 1 6 2 1850 100 NJ
+preplace netloc UART_Loader_0_o_Byte 1 8 1 2750 380n
+preplace netloc UART_Loader_0_o_TX_DV 1 8 1 N 420
+preplace netloc UART_RX_o_RX_Byte 1 4 2 1140 270 NJ
+preplace netloc UART_RX_o_RX_DV 1 4 2 N 260 1520J
+preplace netloc UART_Sender_0_o_TX_Active 1 7 3 2320 560 2750J 850 3130
+preplace netloc UART_Sender_0_o_TX_Done 1 7 3 2310 930 NJ 930 3120
+preplace netloc UART_Sender_0_o_TX_Serial 1 9 1 NJ 400
+preplace netloc i_Button_0_1 1 0 7 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ 680 NJ
+preplace netloc i_Clock_0_1 1 0 9 20 280 240 290 520 290 830 340 1150 230 1540 170 1900 110 2210 570 2780
+preplace netloc i_RX_Serial_0_1 1 0 4 10J 270 NJ 270 NJ 270 820J
+preplace netloc i_Reset_1 1 0 1 NJ 360
+preplace netloc xlconstant_0_dout 1 7 1 2230J 170n
+preplace netloc xlconstant_1_dout 1 8 1 NJ 770
+preplace netloc xlconstant_2_dout 1 8 1 2780J 790n
+preplace netloc RESPUESTA_SERIAL_o_Response 1 7 2 2300 280 2750
+preplace netloc RESPUESTA_SERIAL_o_Response_Num_Bytes 1 7 2 2300 520 2740
+levelinfo -pg 1 -10 130 370 660 970 1330 1690 2050 2530 2950 3170
+pagesize -pg 1 -db -bbox -sgen -120 0 3290 940
+"
+}
+{
+   "da_axi4_cnt":"7",
+   "da_board_cnt":"3",
+   "da_clkrst_cnt":"18",
+   "da_ps7_cnt":"1"
+}

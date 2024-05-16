@@ -1,0 +1,60 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "Top_BMC_DST_Indicator_0_1",
+    "cell_name": "BMC_DST",
+    "component_reference": "xilinx.com:module_ref:BMC_DST_Indicator:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_DST_Indicator_0_1",
+    "parameters": {
+      "component_parameters": {
+        "INVALID": [ { "value": "\"00000000\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "PTT": [ { "value": "\"00000001\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "NTT": [ { "value": "\"00000010\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "NR": [ { "value": "\"00000011\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "PTP": [ { "value": "\"00000100\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BR": [ { "value": "\"00000101\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "Component_Name": [ { "value": "Top_BMC_DST_Indicator_0_1", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "INVALID": [ { "value": "\"00000000\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "PTT": [ { "value": "\"00000001\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "NTT": [ { "value": "\"00000010\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "NR": [ { "value": "\"00000011\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "PTP": [ { "value": "\"00000100\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BR": [ { "value": "\"00000101\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "digilentinc.com:eclypse-z7:part0:1.1" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z020" } ],
+        "PACKAGE": [ { "value": "clg484" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../ASWE_Terminal_System.gen/sources_1/bd/Top/ip/Top_BMC_DST_Indicator_0_1" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.2" } ],
+        "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "i_Data": [ { "direction": "in", "size_left": "2047", "size_right": "0" } ],
+        "i_Num_Bytes": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "i_Type": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "o_DST": [ { "direction": "out", "size_left": "7", "size_right": "0" } ]
+      }
+    }
+  }
+}
